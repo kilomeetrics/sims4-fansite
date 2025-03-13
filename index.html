@@ -3,82 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sims 4 Fansite</title>
+    <title>SimFansite - The Sims 4 Nieuws</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #DDF3FF;
-            color: #2D2D2D;
-            text-align: center;
+            background-color: #f1f1f1;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #1F8AC0;
-            padding: 20px;
+            background-color: #4CAF50;
             color: white;
-            font-size: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .header-logo {
-            width: 250px;
-            margin-bottom: 10px;
-        }
-        .plumbob {
-            width: 50px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
+            text-align: center;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        main {
+            padding: 20px;
         }
         .news-item {
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .news-item:last-child {
-            border-bottom: none;
+        .news-item h2 {
+            color: #4CAF50;
         }
-        .news-title {
-            font-size: 20px;
-            color: #1F8AC0;
+        .news-item p {
+            color: #555;
         }
-        .news-date {
-            font-size: 14px;
-            color: gray;
+        .news-item a {
+            color: #4CAF50;
+            text-decoration: none;
         }
-        .news-img {
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            max-height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="https://upload.wikimedia.org/wikipedia/en/4/4b/Plumbob_green.png" alt="Plumbob" class="plumbob">
-        <span>The Sims 4 Nieuws</span>
-    </header>
-    
-    <div class="container">
-        <div class="news-item">
-            <div class="news-title">Nieuwe Expansion Pack aangekondigd!</div>
-            <div class="news-date">13 maart 2025</div>
-            <p>EA heeft een gloednieuwe uitbreiding onthuld met spannende nieuwe functies!</p>
-        </div>
-        <div class="news-item">
-            <div class="news-title">Nieuwe gratis update nu beschikbaar</div>
-            <div class="news-date">10 maart 2025</div>
-            <p>Een update met verbeteringen en nieuwe voorwerpen is nu live!</p>
-        </div>
-    </div>
+
+<header>
+    <h1>SimFansite - The Sims 4 Nieuws</h1>
+    <p>Alle updates en nieuwtjes over The Sims 4, de favoriete levenssimulatie!</p>
+</header>
+
+<main>
+    <section class="news-item">
+        <h2>1. Terugkeer van de Inbreker</h2>
+        <p>Na tien jaar is de iconische inbreker Robin Banks terug in The Sims 4. Spelers kunnen nu hun huizen beschermen tegen inbraken door gebruik te maken van alarmen en de politie in te schakelen. Deze functie was een veelgevraagde toevoeging door de community.</p>
+        <a href="https://www.polygon.com/cozy-gaming/529436/the-sims-4-burglar-free-update?utm_source=chatgpt.com" target="_blank">Lees meer</a>
+    </section>
+
+    <section class="news-item">
+        <h2>2. 'Blast from the Past' Evenement</h2>
+        <p>Ter gelegenheid van het 25-jarig jubileum van The Sims werd op 4 februari 2025 het 'Blast from the Past' evenement gelanceerd. Dit evenement introduceerde iconische beloningen uit eerdere Sims-versies, zoals de enorme verjaardagstaart en plastic opblaasmeubelen. Spelers konden ook deelnemen aan opdrachten om nostalgische items te verzamelen.</p>
+        <a href="https://www.moonshinesim.nl/2273927_het-nieuwe-sims-4-evenement-blast-from-the-past-start-4-februari?utm_source=chatgpt.com" target="_blank">Lees meer</a>
+    </section>
+
+    <section class="news-item">
+        <h2>3. 'Leven en Dood' Uitbreidingspakket</h2>
+        <p>Op 31 oktober 2024 werd het 'Leven en Dood' uitbreidingspakket uitgebracht. Dit pakket introduceerde nieuwe buurten, geesten, en de mogelijkheid om als de Dood (Magere Hein) te werken. Spelers konden ook reïncarneren en nieuwe bovennatuurlijke krachten ontdekken.</p>
+        <a href="https://www.sortiraparis.com/nl/hobbys/gaming/articles/319246-de-sims-4-leven-en-dood-wat-wij-vinden-van-dit-bovennatuurlijke-en-mysterieuze-uitbreidingspakket?utm_source=chatgpt.com" target="_blank">Lees meer</a>
+    </section>
+
+    <section class="news-item">
+        <h2>4. 'Sneeuwpret' Uitbreiding Aangekondigd</h2>
+        <p>Op 12 januari 2025 werd de 'Sneeuwpret' uitbreiding aangekondigd. Deze uitbreiding neemt spelers mee naar een nieuw vakantieresort aan de voet van Mount Komorebi, geïnspireerd op Japan. Met activiteiten zoals skiën, snowboarden en rotsklimmen biedt deze uitbreiding diverse nieuwe gameplay-elementen.</p>
+        <a href="https://www.eurogamer.nl/the-sims-4-sneeuwpret-uitbreiding-aangekondigd?utm_source=chatgpt.com" target="_blank">Lees meer</a>
+    </section>
+
+    <section class="news-item">
+        <h2>5. Kleine Updates en Fixes</h2>
+        <p>Begin januari 2025 werd een patch uitgebracht die lichtknopjes toevoegde aan het basisspel, waarmee spelers hun bouwwerken realistischer konden maken. Daarnaast werden er top surgery-littekens, binders en gehoorapparaten geïntroduceerd, evenals glucosemonitoren voor Sims vanaf peuters.</p>
+        <a href="https://upcoming.nl/artikel/491323/belangrijke-aankondiging-de-sims-4-introduceert-lichtknopjes-in-het-basisspel?utm_source=chatgpt.com" target="_blank">Lees meer</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 SimFansite. Alle rechten voorbehouden.</p>
+</footer>
+
 </body>
 </html>

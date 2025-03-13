@@ -1,0 +1,41 @@
+name: Update Index
+
+on:
+  push:
+    paths:
+      - 'artikelen/**'  # De workflow wordt geactiveerd wanneer bestanden in de 'artikelen' map worden toegevoegd of gewijzigd.
+      
+jobs:
+  update-index:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Update index page
+        run: |
+          # Script om de titel en intro van artikelen te extraheren en toe te voegen aan de indexpagina.
+          
+          mkdir temp_articles
+          # Loop door de bestanden in de map 'artikelen'
+          for file in artikelen/*.html; do
+            # Haal de titel uit het artikel
+            title=$(grep -oP '(?<=<title>)(.*?)(?=</title>)' $file)
+            # Haal een intro uit het artikel (bijvoorbeeld de eerste paragraaf)
+            intro=$(grep -oP '(?<=<p>)(.*?)(?=</p>)' $file | head -n 1)
+            
+            # Voeg de titel en intro toe aan een nieuw bestand voor de indexpagina
+            echo "<div class='news-item'><h2><a href='$file'>$title</a></h2><p>$intro</p></div>" >> temp_articles/index-update.html
+          done
+
+          # Voeg de nieuwe artikelen toe aan de index
+          cat temp_articles/index-update.html >> index.html
+          rm -rf temp_articles  # Verwijder tijdelijke bestanden
+
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: 'Update index with new articles'

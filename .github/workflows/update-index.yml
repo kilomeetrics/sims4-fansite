@@ -33,9 +33,10 @@ jobs:
           cat temp_articles/index-update.html >> index.html
           rm -rf temp_articles  # Verwijder tijdelijke bestanden
 
-      - name: Commit and push changes
-        uses: EndBug/add-and-commit@v7
-        with:
-          author_name: 'GitHub Actions'
-          author_email: 'actions@github.com'
-          message: 'Update index with new articles'
+- name: Commit and push changes
+  uses: EndBug/add-and-commit@v7
+  with:
+    author_name: 'GitHub Actions'
+    author_email: 'actions@github.com'
+    message: 'Update index with new articles'
+    github_token: ${{ secrets.GH_TOKEN }}  # Gebruik de GitHub secret

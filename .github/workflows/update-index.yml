@@ -3,7 +3,7 @@ name: Update Index
 on:
   push:
     paths:
-      - 'artikelen/**'  # De workflow wordt geactiveerd wanneer bestanden in de 'artikelen' map worden toegevoegd of gewijzigd.
+      - 'artikels/**'  # De workflow wordt geactiveerd wanneer bestanden in de 'artikelen' map worden toegevoegd of gewijzigd.
       
 jobs:
   update-index:

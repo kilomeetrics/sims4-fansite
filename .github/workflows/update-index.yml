@@ -19,7 +19,7 @@ jobs:
           
           mkdir temp_articles
           # Loop door de bestanden in de map 'artikelen'
-          for file in artikelen/*.html; do
+          for file in artikels/*.html; do
             # Haal de titel uit het artikel
             title=$(grep -oP '(?<=<title>)(.*?)(?=</title>)' $file)
             # Haal een intro uit het artikel (bijvoorbeeld de eerste paragraaf)

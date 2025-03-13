@@ -4,15 +4,15 @@ on:
   push:
     paths:
       - 'artikels/**'  # De workflow wordt geactiveerd wanneer bestanden in de 'artikelen' map worden toegevoegd of gewijzigd.
-      
+
 jobs:
   update-index:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Update index page
         run: |
           # Script om de titel en intro van artikelen te extraheren en toe te voegen aan de indexpagina.
@@ -24,7 +24,7 @@ jobs:
             title=$(grep -oP '(?<=<title>)(.*?)(?=</title>)' $file)
             # Haal een intro uit het artikel (bijvoorbeeld de eerste paragraaf)
             intro=$(grep -oP '(?<=<p>)(.*?)(?=</p>)' $file | head -n 1)
-            
+
             # Voeg de titel en intro toe aan een nieuw bestand voor de indexpagina
             echo "<div class='news-item'><h2><a href='$file'>$title</a></h2><p>$intro</p></div>" >> temp_articles/index-update.html
           done
@@ -33,10 +33,10 @@ jobs:
           cat temp_articles/index-update.html >> index.html
           rm -rf temp_articles  # Verwijder tijdelijke bestanden
 
-- name: Commit and push changes
-  uses: EndBug/add-and-commit@v7
-  with:
-    author_name: 'GitHub Actions'
-    author_email: 'actions@github.com'
-    message: 'Update index with new articles'
-    github_token: ${{ secrets.GH_TOKEN }}  # Gebruik de GitHub secret
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: 'Update index with new articles'
+          github_token: ${{ secrets.GH_TOKEN }}  # Gebruik de GitHub secret voor authenticatie
